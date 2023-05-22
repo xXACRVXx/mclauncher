@@ -37,7 +37,8 @@ def getMinecraftArgvs(minecraftDir, version, ID):
 		jsonFileContent = jsonFile.read()
 
 	jsonFileKeys = json.loads( jsonFileContent )
-	argvs = jsonFileKeys['minecraftArguments']
+	argvs0 = jsonFileKeys['arguments']
+	argvs = argvs["game"]
 	argvs = argvs	.replace('${auth_player_name}', ID)\
 					.replace('${version_name}', '{}')\
 					.replace('${game_directory}', minecraftDir)\
